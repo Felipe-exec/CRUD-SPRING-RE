@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <div th:replace="cabecalho :: head"></div>
+
+    <title>Crud Manager - Missão/Incidente</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/z7GqKZn.gif');
+            background-size: cover;
+            color: white;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        .form-control {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-2">
+        <h2>Missão/Incidente</h2>
+        <form action="#" th:action="@{/missions/new}" th:object="${mission}" method="POST">
+            <input type="hidden" th:field="*{id}" id="id">
+
+            <input type="text" th:field="*{name}" placeholder="Nome da operação" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{description}" placeholder="Descrição detalhada da missão" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{local}" placeholder="Local do incidente" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{cops}" placeholder="ID's dos Policiais que participaram do incidente" class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2">Salvar</button>
+        </form>
+        <hr>
+        <a th:href="@{/missions}" style="color: white;">Missões/Incidente</a>
+    </div>
+</body>
+
+</html>

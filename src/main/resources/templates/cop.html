@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="cabecalho :: head"></div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Crud Manager - Policiais</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/z7GqKZn.gif');
+            background-size: cover;
+            color: white;
+        }
+
+        .table td,
+        .table th {
+            vertical-align: middle;
+            color: white;
+        }
+
+        .arrow-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            font-size: 100px;
+            color: white;
+        }
+
+        .arrow-link:hover {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-2">
+        <h1 style="color: white;">Policiais</h1>
+        <div class="text-right mb-3">
+            <a th:href="@{/cops/form}" class="btn btn-primary btn-sm">Adicionar Policial</a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID do Policial</th>
+                    <th>Nome</th>
+                    <th>Gênero</th>
+                    <th>Patente</th>
+                    <th>Missões participadas</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c : ${cops}">
+                    <td><span th:text="${c.id}"></span></td>
+                    <td><span th:text="${c.name}"></span></td>
+                    <td><span th:text="${c.gender}"></span></td>
+                    <td><span th:text="${c.rank}"></span></td>
+                    <td>
+                        <ul>
+                            <li th:each="mission : ${c.missions}">
+                                <span th:text="${mission.name}"></span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <a th:href="@{/cops/update/{id}(id=${c.id})}" class="btn btn-primary btn-sm">Alterar</a>
+                        <a th:href="@{/cops/delete/{id}(id=${c.id})}" class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="/missions" class="arrow-link">&#10140;</a>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raccoon Police Department</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <div th:replace="cabecalho :: head"></div>
+  <style>
+    /* Estilos personalizados */
+    body {
+      background: rgb(2,0,36);
+	  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,139,1) 90%);
+      background-size: cover;
+      color: white;
+    }
+
+    .header {
+      background-color: darkblue;
+      padding: 20px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    .jumbotron {
+      background-color: #333;
+      padding: 40px;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .jumbotron h2 {
+      font-size: 24px;
+    }
+
+    .jumbotron p {
+      font-size: 16px;
+    }
+    
+    .img {
+    	margin: 0 auto;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="text-center">Raccoon Police Department</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="jumbotron d-flex justify-content-center align-items-center">
+        <div>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/76b5fe3b-2107-4cdb-9a87-3869e811c46a/da2cm8v-0517795e-f9d9-432f-9549-d011207dea09.png/v1/fill/w_300,h_400/racoon_police_department_badge_by_ploterka_da2cm8v-400t.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM2NiIsInBhdGgiOiJcL2ZcLzc2YjVmZTNiLTIxMDctNGNkYi05YTg3LTM4NjllODExYzQ2YVwvZGEyY204di0wNTE3Nzk1ZS1mOWQ5LTQzMmYtOTU0OS1kMDExMjA3ZGVhMDkucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.AemT59ckhmaAey3nyXq3kzgpQRGn1ltd6MvZM8RvcBo" width="45%" alt="">
+        </div>
+        <div class="text-center">
+            <h2>Bem-vindo ao site oficial da Raccoon Police Department</h2>
+            <p>Nosso dever é proteger e servir a comunidade de Raccoon City.</p>
+        </div>
+        <div>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/76b5fe3b-2107-4cdb-9a87-3869e811c46a/da2cm8v-0517795e-f9d9-432f-9549-d011207dea09.png/v1/fill/w_300,h_400/racoon_police_department_badge_by_ploterka_da2cm8v-400t.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM2NiIsInBhdGgiOiJcL2ZcLzc2YjVmZTNiLTIxMDctNGNkYi05YTg3LTM4NjllODExYzQ2YVwvZGEyY204di0wNTE3Nzk1ZS1mOWQ5LTQzMmYtOTU0OS1kMDExMjA3ZGVhMDkucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.AemT59ckhmaAey3nyXq3kzgpQRGn1ltd6MvZM8RvcBo" width="45%" alt="">
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Sobre nós</h3>
+        <p>A Raccoon Police Department é uma força policial dedicada a manter a ordem e a segurança em Raccoon City.
+          Nossa equipe altamente treinada está pronta para responder a qualquer emergência e proteger os cidadãos. Veja o Nosso
+        melhor time de operações, a S.T.A.R.S.:</p>
+        <img class="border border-5" src="https://pbs.twimg.com/media/Du-BtZiWkAAOAv2.jpg" width="95%"  alt="">
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3>Notícias</h3>
+            <img src="" width="15%" class="mr-3" alt="">
+        </div>
+        <p>Acompanhe as últimas notícias e atualizações da Raccoon Police Department.</p>
+        <ul>
+          <li>Novos recrutas se juntam à equipe</li>
+          <li>Operação policial bem-sucedida contra o crime organizado</li>
+          <li>Palestra de segurança pública na comunidade local</li>
+          <li>EXTRA: Chefe Irons recusa-se a acreditar em histórias absurdas da equipe S.T.A.R.S. após o incidente em Arkley
+            <img class="border border-5" src="https://pbs.twimg.com/media/EhEjWAaWoAEeRPs.jpg" width="95%"  alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <a href="/index/loading" class="text-center d-block mt-5 mb-3">Já é um membro da polícia? Acesse aqui!</a>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>          

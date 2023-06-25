@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <div th:replace="cabecalho :: head"></div>
+    <title>Crud Manager - Policial</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/z7GqKZn.gif');
+            background-size: cover;
+            color: white;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        .form-control {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-2">
+        <h2>Policial</h2>
+        <form action="#" th:action="@{/cops/new}" th:object="${cop}" method="POST">
+            <input type="text" th:field="*{name}" placeholder="Nome do policial" class="form-control mb-4 col-4">
+
+			<select th:field="*{gender}" class="form-control mb-4 col-4">
+			    <option value="M">Masculino</option>
+			    <option value="F">Feminino</option>
+			</select>
+			
+			<input type="text" th:field="*{rank}" placeholder="Patente/Posição na corporação" class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{missions}" placeholder="ID's das missões participadas" class="form-control mb-4 col-4">
+			
+            <button type="submit" class="btn btn-info col-2">Salvar</button>
+        </form>
+        <hr>
+        <a th:href="@{/cops}" style="color: white;">Policiais</a>
+    </div>
+</body>
+</html>
