@@ -56,7 +56,8 @@ Delete (Excluir): A operação de exclusão permite remover registros do banco d
 
 ## 🚀 Como executar o projeto
 
-Link: (EM BREVE)
+Tenha uma IDE como o Eclipse (não testei no NetBeans), execute como Java Application a classe CrudManagerApplication.java. 
+Pronto! Agora é só usar :)
 
 ## 🛠 Tecnologias
 
