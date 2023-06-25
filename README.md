@@ -25,7 +25,7 @@
  <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
  <a href="#-como-executar-o-projeto">Como executar</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-autores">Autor</a> • 
+ <a href="#-autor">Autor</a> • 
 </p>
 
 ## 💻 Sobre o projeto
