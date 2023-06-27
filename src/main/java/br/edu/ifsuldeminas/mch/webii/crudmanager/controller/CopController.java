@@ -75,10 +75,12 @@ public class CopController {
 	    }
 	    
 	    Cop cop = optCop.get();
-	    
-	    cop.setMissions(null);
-	    
-	    copRepository.delete(cop);
+        List<Mission> missions = cop.getMissions();
+        for (Mission mission : missions) {
+            mission.getCops().remove(cop);
+            missionRepository.save(mission);
+        }
+        copRepository.delete(cop);
 	    
 	    return "redirect:/cops";
 	}
