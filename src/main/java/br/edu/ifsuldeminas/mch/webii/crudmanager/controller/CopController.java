@@ -50,12 +50,10 @@ public class CopController {
 	}
 	
 	@GetMapping("/cops/update/{id}")
-	public String copUpdate(@PathVariable("id") Integer id, Model model)
-	{
+	public String copUpdate(@PathVariable("id") Integer id, Model model){
 		
 		Optional<Cop> optCop = copRepository.findById(id);
-		if(!optCop.isPresent())
-		{
+		if(!optCop.isPresent()){
 			//Gerar erro
 		}
 		
