@@ -25,6 +25,7 @@
     <div class="container my-2">
         <h2>Policial</h2>
         <form action="#" th:action="@{/cops/new}" th:object="${cop}" method="POST">
+        
             <input type="text" th:field="*{name}" placeholder="Nome do policial" class="form-control mb-4 col-4">
 
 			<select th:field="*{gender}" class="form-control mb-4 col-4">

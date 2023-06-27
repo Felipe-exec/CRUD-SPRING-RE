@@ -68,16 +68,19 @@ public class CopController {
 	
 	@GetMapping("/cops/delete/{id}")
 	public String copDelete(@PathVariable("id") Integer id) {
-	    Optional<Cop> optionalCop = copRepository.findById(id);
-	    if (optionalCop.isPresent()) {
-	        Cop cop = optionalCop.get();
-	        // Remova o policial das missões existentes
-	        for (Mission mission : cop.getMissions()) {
-	            mission.getCops().remove(cop);
-	        }
-	        // Exclua o policial
-	        copRepository.delete(cop);
+		
+	    Optional<Cop> optCop = copRepository.findById(id);
+	    if (!optCop.isPresent()) {
+	        // Gerar erro
 	    }
+	    
+	    Cop cop = optCop.get();
+	    
+	    cop.setMissions(null);
+	    
+	    copRepository.delete(cop);
+	    
 	    return "redirect:/cops";
 	}
+
 }

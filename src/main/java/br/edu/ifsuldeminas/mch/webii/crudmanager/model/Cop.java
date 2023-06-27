@@ -1,6 +1,5 @@
 package br.edu.ifsuldeminas.mch.webii.crudmanager.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,7 +22,7 @@ public class Cop {
     private String gender;
     private String rank;
 
-    @ManyToMany(mappedBy = "cops", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "cops", fetch = FetchType.EAGER)
     private List<Mission> missions = new ArrayList<>();
     
     public Cop() {}

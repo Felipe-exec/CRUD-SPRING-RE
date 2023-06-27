@@ -53,12 +53,10 @@ public class MissionController {
 
 	
 	@GetMapping("/missions/update/{id}")
-	public String missionUpdate(@PathVariable("id") Integer id, Model model)
-	{
+	public String missionUpdate(@PathVariable("id") Integer id, Model model) {
 		
 		Optional<Mission> optMission = missionRepository.findById(id);
-		if(!optMission.isPresent())
-		{
+		if(!optMission.isPresent()){
 			//Gerar erro
 		}
 		
@@ -70,12 +68,10 @@ public class MissionController {
 	}
 	
 	@GetMapping("/missions/delete/{id}")
-	public String missionDelete(@PathVariable("id") Integer id)
-	{
+	public String missionDelete(@PathVariable("id") Integer id) {
 		
 		Optional<Mission> optMission = missionRepository.findById(id);
-		if(!optMission.isPresent())
-		{
+		if(!optMission.isPresent()){
 			//Gerar erro
 		}
 		
