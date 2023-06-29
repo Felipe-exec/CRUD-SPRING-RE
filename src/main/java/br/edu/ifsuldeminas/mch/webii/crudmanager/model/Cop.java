@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,14 @@ public class Cop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    @NotBlank(message = "O nome do policial não pode estar vazio!")
     private String name;
+    
+    @NotBlank(message = "O gênero do policial não pode estar vazio!")
     private String gender;
+    
+    @NotBlank(message = "O rank/patente do policial não pode estar vazio!")
     private String rank;
 
     @ManyToMany(mappedBy = "cops", fetch = FetchType.EAGER)

@@ -25,14 +25,19 @@
     <div class="container my-2">
         <h2>Policial</h2>
         <form action="#" th:action="@{/cops/new}" th:object="${cop}" method="POST">
-        
+        	
+        	<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
             <input type="text" th:field="*{name}" placeholder="Nome do policial" class="form-control mb-4 col-4">
-
+			
+			<span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="text-danger"></span>
 			<select th:field="*{gender}" class="form-control mb-4 col-4">
+			    <option value="">Selecione</option>
 			    <option value="M">Masculino</option>
 			    <option value="F">Feminino</option>
 			</select>
+
 			
+			<span th:if="${#fields.hasErrors('rank')}" th:errors="*{rank}" class="text-danger"></span>
 			<input type="text" th:field="*{rank}" placeholder="Patente/Posição na corporação" class="form-control mb-4 col-4">
 			
             <button type="submit" class="btn btn-info col-2">Salvar</button>

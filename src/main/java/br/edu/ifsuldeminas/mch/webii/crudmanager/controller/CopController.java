@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,7 +44,12 @@ public class CopController {
 	}
 	
 	@PostMapping("/cops/new")
-	public String copNew(@ModelAttribute("cop") Cop cop) {
+	public String copNew(@Valid @ModelAttribute("cop") Cop cop, BindingResult bindingResult) {
+		
+		if (bindingResult.hasErrors()) {
+			return "cop_form";
+		}
+		
 	    List<Mission> selectedMission = cop.getMissions();
 	    List<Mission> missionList = missionRepository.findAllById(selectedMission.stream().map(Mission::getId).collect(Collectors.toList()));
 	    cop.setMissions(missionList);
