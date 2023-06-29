@@ -58,6 +58,11 @@ public class InitializeDataBase implements CommandLineRunner {
         bradVickers.setName("Brad Vickers");
         bradVickers.setRank("S.T.A.R.S. Officer");
         bradVickers.setGender("M");
+        
+        Cop leonSKennedy = new Cop();
+        leonSKennedy.setName("Leon S. Kennedy");
+        leonSKennedy.setRank("Police Officer of Raccon City");
+        leonSKennedy.setGender("M");
 
         copRepository.save(albertWesker);
         copRepository.save(jillValentine);
@@ -66,6 +71,7 @@ public class InitializeDataBase implements CommandLineRunner {
         copRepository.save(rebeccaChambers);
         copRepository.save(josephFrost);
         copRepository.save(bradVickers);
+        copRepository.save(leonSKennedy);
 
         Mission mansionIncident = new Mission();
         mansionIncident.setName("Resgate da equipe Bravo");
@@ -84,5 +90,18 @@ public class InitializeDataBase implements CommandLineRunner {
         mansionIncident.getCops().add(josephFrost);
 
         missionRepository.save(mansionIncident);
+        
+        Mission raccoonIncident = new Mission();
+        raccoonIncident.setName("Tragédia de Raccoon City");
+        raccoonIncident.setLocal("Raccoon City");
+        raccoonIncident.setDescription("Foi um surto viral catastrófico que ocorreu em etapas entre maio e outubro de 1998, "
+        		+ "resultando na destruição da cidade em um bombardeio de mísseis, codinome \"XX\".");
+        
+        raccoonIncident.getCops().add(jillValentine);
+        raccoonIncident.getCops().add(leonSKennedy);
+        raccoonIncident.getCops().add(bradVickers);
+        
+        
+        missionRepository.save(raccoonIncident);
     }
 }
