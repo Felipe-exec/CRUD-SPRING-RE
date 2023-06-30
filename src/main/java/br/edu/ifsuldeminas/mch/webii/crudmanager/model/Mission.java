@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +22,15 @@ public class Mission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    @NotBlank(message = "O nome da operação não pode estar vazio!")
     private String name;
+    
+    @NotBlank(message = "A descrição do caso não pode estar vazia!")
     @Column(length = 500)
     private String description;
+    
+    @NotBlank(message = "O local da operação não pode estar vazio!")
     private String local;
 
     @ManyToMany(fetch = FetchType.EAGER)
