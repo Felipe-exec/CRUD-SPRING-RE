@@ -1,4 +1,4 @@
-package br.edu.ifsuldeminas.mch.webii.crudmanager;
+package crudmanager;
 
 import javax.transaction.Transactional;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import br.edu.ifsuldeminas.mch.webii.crudmanager.dao.MissionRepository;
-import br.edu.ifsuldeminas.mch.webii.crudmanager.dao.CopRepository;
-import br.edu.ifsuldeminas.mch.webii.crudmanager.model.*;
+import crudmanager.dao.MissionRepository;
+import crudmanager.dao.CopRepository;
+import crudmanager.model.*;
 
 @Component
 @Transactional

@@ -1,4 +1,4 @@
-package br.edu.ifsuldeminas.mch.webii.crudmanager;
+package crudmanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

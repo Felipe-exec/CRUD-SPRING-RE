@@ -1,4 +1,4 @@
-package br.edu.ifsuldeminas.mch.webii.crudmanager.controller;
+package crudmanager.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import br.edu.ifsuldeminas.mch.webii.crudmanager.dao.MissionRepository;
-import br.edu.ifsuldeminas.mch.webii.crudmanager.dao.CopRepository;
-import br.edu.ifsuldeminas.mch.webii.crudmanager.model.Mission;
-import br.edu.ifsuldeminas.mch.webii.crudmanager.model.Cop;
+import crudmanager.dao.MissionRepository;
+import crudmanager.dao.CopRepository;
+import crudmanager.model.Mission;
+import crudmanager.model.Cop;
 
 @Controller
 public class CopController {

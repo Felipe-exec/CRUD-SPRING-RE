@@ -1,4 +1,4 @@
-package br.edu.ifsuldeminas.mch.webii.crudmanager.controller;
+package crudmanager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

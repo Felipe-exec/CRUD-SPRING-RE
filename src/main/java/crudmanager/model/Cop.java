@@ -1,4 +1,4 @@
-package br.edu.ifsuldeminas.mch.webii.crudmanager.model;
+package crudmanager.model;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
